@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+🔹 Project Setup Guide
+1️⃣ Install Node.js (if not installed)
+Download & install Node.js from nodejs.org (Recommended: LTS version).
+Verify installation by running:
+sh
+Copy
+Edit
+node -v
+npm -v
+2️⃣ Set Up Your React Project
+sh
+Copy
+Edit
+# Create a new React project with Vite
+npx create-vite@latest property-constructor-landing --template react-ts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Navigate into the project folder
+cd property-constructor-landing
 
-Currently, two official plugins are available:
+# Install dependencies
+npm install
+3️⃣ Install Required Packages
+sh
+Copy
+Edit
+# Install Tailwind CSS
+npm install -D tailwindcss postcss autoprefixer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
+# Initialize Tailwind config
+npx tailwindcss init -p
+4️⃣ Configure Tailwind CSS
+Open tailwind.config.js, replace content with:
+js
+Copy
+Edit
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
   },
-})
-```
+  plugins: [],
+};
+Open src/index.css, add:
+css
+Copy
+Edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+5️⃣ Add Your Components
+Replace src/App.tsx with the final App.tsx I provided.
+Create the components folder and add all the component files.
+6️⃣ Start the Development Server
+sh
+Copy
+Edit
+npm run dev
+Open http://localhost:5173/ in your browser.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Here we get error in installing npx tailwindcss init -p
+To resolve this: 
+1) we install npm install tailwindcss@3.4.17
+2) then we run the code npx tailwindcss init -p which will Create Tailwind CSS config file: tailwind.config.js &
+Created PostCSS config file: postcss.config.js.
+and also check the version of node and npm which should be above 16 & 8 respectively.
