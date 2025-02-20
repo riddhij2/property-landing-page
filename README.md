@@ -2,15 +2,9 @@
 1️⃣ Install Node.js (if not installed)
 Download & install Node.js from nodejs.org (Recommended: LTS version).
 Verify installation by running:
-sh
-Copy
-Edit
 node -v
 npm -v
 2️⃣ Set Up Your React Project
-sh
-Copy
-Edit
 # Create a new React project with Vite
 npx create-vite@latest property-constructor-landing --template react-ts
 
@@ -20,9 +14,6 @@ cd property-constructor-landing
 # Install dependencies
 npm install
 3️⃣ Install Required Packages
-sh
-Copy
-Edit
 # Install Tailwind CSS
 npm install -D tailwindcss postcss autoprefixer
 
@@ -30,9 +21,6 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 4️⃣ Configure Tailwind CSS
 Open tailwind.config.js, replace content with:
-js
-Copy
-Edit
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -41,9 +29,6 @@ export default {
   plugins: [],
 };
 Open src/index.css, add:
-css
-Copy
-Edit
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,9 +36,6 @@ Edit
 Replace src/App.tsx with the final App.tsx I provided.
 Create the components folder and add all the component files.
 6️⃣ Start the Development Server
-sh
-Copy
-Edit
 npm run dev
 Open http://localhost:5173/ in your browser.
 
